@@ -1,0 +1,110 @@
+{
+  "crawl_info": {
+    "start_url": "https://ugurokullari.k12.tr/",
+    "target_domain": "ugurokullari.k12.tr",
+    "max_pages": 10,
+    "max_depth": 3,
+    "skip_url_patterns": [
+      "*on-kayit*",
+      "*iletisim*",
+      "*kvkk*",
+      "*kvkk-basvuru-formu.docx*",
+      "*login*",
+      "*blog*",
+      "*okul-kiyafetleri*",
+      "*yonetim*",
+      "*haber-ve-duyuru*",
+      "*ugurlu-olmak*",
+      "*okullarimiz*"
+    ],
+    "skip_save_patterns": [
+      "/haber-duyuru/",
+      "/blog/"
+    ],
+    "total_pages_crawled": 10,
+    "crawl_timestamp": "2026-01-15T16:47:22.007868"
+  },
+  "pages": [
+    {
+      "url": "https://ugurokullari.k12.tr/",
+      "depth": 0,
+      "title": "",
+      "markdown_file": "output/markdown/index.md",
+      "markdown_file_relative": "markdown/index.md",
+      "content_length": 188533,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/blog",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/blog.md",
+      "markdown_file_relative": "markdown/blog.md",
+      "content_length": 8600,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/iletisim",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/iletisim.md",
+      "markdown_file_relative": "markdown/iletisim.md",
+      "content_length": 2928,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/hakkimizda/yonetim",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/hakkimizda_yonetim.md",
+      "markdown_file_relative": "markdown/hakkimizda_yonetim.md",
+      "content_length": 63,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ugurlu-olmak",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/ugurlu-olmak.md",
+      "markdown_file_relative": "markdown/ugurlu-olmak.md",
+      "content_length": 759,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-kiyafetleri",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/okul-kiyafetleri.md",
+      "markdown_file_relative": "markdown/okul-kiyafetleri.md",
+      "content_length": 133,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/haber-ve-duyurular",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/haber-ve-duyurular.md",
+      "markdown_file_relative": "markdown/haber-ve-duyurular.md",
+      "content_length": 493,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/on-kayit",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/on-kayit.md",
+      "markdown_file_relative": "markdown/on-kayit.md",
+      "content_length": 1446,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okullarimiz",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/okullarimiz.md",
+      "markdown_file_relative": "markdown/okullarimiz.md",
+      "content_length": 17882,
+      "has_content": true
+    }
+  ]
+}
