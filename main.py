@@ -13,10 +13,10 @@ from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, ContentTyp
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
 
 TARGET_DOMAIN = "ugurokullari.k12.tr"
-START_URL = f"https://{TARGET_DOMAIN}/"
+START_URL = f"https://{TARGET_DOMAIN}"
 
-MAX_PAGES = 10
-MAX_DEPTH = 3
+MAX_PAGES = None
+MAX_DEPTH = 10
 
 PAGE_TIMEOUT = 60000
 DELAY_BEFORE_SCRAPE = 3.0
@@ -83,6 +83,17 @@ def ensure_dirs():
     os.makedirs(MARKDOWN_DIR, exist_ok=True)
 
 
+def normalize_url(url: str) -> str:
+    parsed = urlparse(url)
+    path = parsed.path.rstrip('/')
+    if not path:
+        path = ''
+    normalized = f"{parsed.scheme}://{parsed.netloc}{path}"
+    if parsed.query:
+        normalized += f"?{parsed.query}"
+    return normalized
+
+
 def should_skip_url(url: str) -> bool:
     for pattern in SKIP_URL_PATTERNS:
         if fnmatch.fnmatch(url, pattern):
@@ -142,7 +153,6 @@ async def main():
     deep_crawl_strategy = BFSDeepCrawlStrategy(
         max_depth=MAX_DEPTH,
         include_external=False,
-        max_pages=MAX_PAGES,
         filter_chain=filter_chain
     )
 
@@ -179,8 +189,17 @@ async def main():
 
         saved_count = 0
         skipped_count = 0
+        seen_urls = set()
 
         for i, result in enumerate(results):
+            normalized = normalize_url(result.url)
+
+            if normalized in seen_urls:
+                skipped_count += 1
+                print(f"Skipped (duplicate): {result.url}")
+                continue
+            seen_urls.add(normalized)
+
             if should_skip_url(result.url):
                 skipped_count += 1
                 print(f"Skipped (post-filter): {result.url}")

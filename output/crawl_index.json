@@ -1,0 +1,84 @@
+{
+  "crawl_info": {
+    "start_url": "https://ugurokullari.k12.tr/",
+    "target_domain": "ugurokullari.k12.tr",
+    "max_pages": null,
+    "max_depth": 10,
+    "skip_url_patterns": [
+      "*on-kayit*",
+      "*iletisim*",
+      "*kvkk*",
+      "*login*",
+      "*blog*",
+      "*okul-kiyafetleri*",
+      "*yonetim*",
+      "*haber-ve-duyuru*",
+      "*ugurlu-olmak*",
+      "*okullarimiz*",
+      "*.docx*",
+      "*.pdf*",
+      "*hakkimizda/yonetim*",
+      "*basin-odasi"
+    ],
+    "total_pages_fetched": 7,
+    "crawl_timestamp": "2026-01-16T17:00:17.690990",
+    "total_pages_saved": 6,
+    "total_pages_skipped": 1
+  },
+  "pages": [
+    {
+      "url": "https://ugurokullari.k12.tr/",
+      "depth": 0,
+      "title": "",
+      "markdown_file": "output/markdown/index.md",
+      "markdown_file_relative": "markdown/index.md",
+      "content_length": 176785,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/cocuklar-ve-fobi",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/cocuklar-ve-fobi.md",
+      "markdown_file_relative": "markdown/cocuklar-ve-fobi.md",
+      "content_length": 15182,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/dijital-cagda-anne-baba-olmak",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/dijital-cagda-anne-baba-olmak.md",
+      "markdown_file_relative": "markdown/dijital-cagda-anne-baba-olmak.md",
+      "content_length": 16081,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/egitimde-disiplinin-onemi-ve-etkileri",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/egitimde-disiplinin-onemi-ve-etkileri.md",
+      "markdown_file_relative": "markdown/egitimde-disiplinin-onemi-ve-etkileri.md",
+      "content_length": 18302,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/dijital-dunyada-gelisimsel-uyum",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/dijital-dunyada-gelisimsel-uyum.md",
+      "markdown_file_relative": "markdown/dijital-dunyada-gelisimsel-uyum.md",
+      "content_length": 15098,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler",
+      "depth": 2,
+      "title": "",
+      "markdown_file": "output/markdown/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler.md",
+      "markdown_file_relative": "markdown/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler.md",
+      "content_length": 0,
+      "has_content": false
+    }
+  ]
+}
