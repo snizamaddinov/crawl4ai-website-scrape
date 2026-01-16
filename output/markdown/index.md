@@ -2,7 +2,7 @@
 url: https://ugurokullari.k12.tr/
 title: 
 depth: 0
-scraped_at: 2026-01-15T16:51:36.285326
+scraped_at: 2026-01-16T16:36:29.340641
 ---
 
 ## Eğitim-Öğretim

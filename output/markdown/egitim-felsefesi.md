@@ -2,7 +2,7 @@
 url: https://ugurokullari.k12.tr/egitim-felsefesi
 title: 
 depth: 1
-scraped_at: 2026-01-15T16:52:02.235897
+scraped_at: 2026-01-16T16:36:29.782737
 ---
 
 # Eğitim Felsefesi

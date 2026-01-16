@@ -16,17 +16,28 @@
       "*ugurlu-olmak*",
       "*okullarimiz*",
       "*.docx*",
-      "*.pdf*"
+      "*.pdf*",
+      "*hakkimizda/yonetim*",
+      "*basin-odasi"
     ],
     "total_pages_fetched": 10,
-    "crawl_timestamp": "2026-01-15T16:52:01.984058",
-    "total_pages_saved": 6,
-    "total_pages_skipped": 4
+    "crawl_timestamp": "2026-01-16T16:36:29.092331",
+    "total_pages_saved": 10,
+    "total_pages_skipped": 0
   },
   "pages": [
     {
       "url": "https://ugurokullari.k12.tr/",
       "depth": 0,
+      "title": "",
+      "markdown_file": "output/markdown/index.md",
+      "markdown_file_relative": "markdown/index.md",
+      "content_length": 188533,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr",
+      "depth": 1,
       "title": "",
       "markdown_file": "output/markdown/index_1.md",
       "markdown_file_relative": "markdown/index_1.md",
@@ -34,21 +45,12 @@
       "has_content": true
     },
     {
-      "url": "https://ugurokullari.k12.tr/basin-odasi",
+      "url": "https://ugurokullari.k12.tr/ugur-international",
       "depth": 1,
       "title": "",
-      "markdown_file": "output/markdown/basin-odasi.md",
-      "markdown_file_relative": "markdown/basin-odasi.md",
-      "content_length": 69,
-      "has_content": true
-    },
-    {
-      "url": "https://ugurokullari.k12.tr/hakkimizda/bir-bakista-biz",
-      "depth": 1,
-      "title": "",
-      "markdown_file": "output/markdown/hakkimizda_bir-bakista-biz.md",
-      "markdown_file_relative": "markdown/hakkimizda_bir-bakista-biz.md",
-      "content_length": 1567,
+      "markdown_file": "output/markdown/ugur-international.md",
+      "markdown_file_relative": "markdown/ugur-international.md",
+      "content_length": 3425,
       "has_content": true
     },
     {
@@ -67,6 +69,42 @@
       "markdown_file": "output/markdown/egitime-teknolojik-destek.md",
       "markdown_file_relative": "markdown/egitime-teknolojik-destek.md",
       "content_length": 3793,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/akademik-birim/okul-oncesi-ve-bagimsiz-anaokulu",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/akademik-birim_okul-oncesi-ve-bagimsiz-anaokulu.md",
+      "markdown_file_relative": "markdown/akademik-birim_okul-oncesi-ve-bagimsiz-anaokulu.md",
+      "content_length": 2416,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/hakkimizda/bir-bakista-biz",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/hakkimizda_bir-bakista-biz.md",
+      "markdown_file_relative": "markdown/hakkimizda_bir-bakista-biz.md",
+      "content_length": 1567,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/metodbox",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/metodbox.md",
+      "markdown_file_relative": "markdown/metodbox.md",
+      "content_length": 4660,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/sorularla-ugur-okullari",
+      "depth": 1,
+      "title": "",
+      "markdown_file": "output/markdown/sorularla-ugur-okullari.md",
+      "markdown_file_relative": "markdown/sorularla-ugur-okullari.md",
+      "content_length": 6890,
       "has_content": true
     },
     {

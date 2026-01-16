@@ -2,7 +2,7 @@
 url: https://ugurokullari.k12.tr/hakkimizda/bir-bakista-biz
 title: 
 depth: 1
-scraped_at: 2026-01-15T16:52:02.184797
+scraped_at: 2026-01-16T16:36:29.691057
 ---
 
 # Bir Bakışta Biz

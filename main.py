@@ -9,11 +9,12 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
 from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
-from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, ContentTypeFilter
+from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, ContentTypeFilter, URLPatternFilter
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
 
 TARGET_DOMAIN = "ugurokullari.k12.tr"
 START_URL = f"https://{TARGET_DOMAIN}/"
+
 MAX_PAGES = 10
 MAX_DEPTH = 3
 
@@ -53,7 +54,8 @@ SKIP_URL_PATTERNS = [
     "*okullarimiz*",
     "*.docx*",
     "*.pdf*",
-    "*hakkimizda/yonetim*"
+    "*hakkimizda/yonetim*",
+    "*basin-odasi"
 ]
 
 OUTPUT_DIR = "output"
@@ -93,7 +95,7 @@ def clean_html_and_convert_to_markdown(html: str, content_selector: str = None, 
         return ""
     
     soup = BeautifulSoup(html, 'html.parser')
-    
+
     if remove_selectors:
         for selector in remove_selectors:
             for element in soup.select(selector):
@@ -110,21 +112,26 @@ def clean_html_and_convert_to_markdown(html: str, content_selector: str = None, 
     markdown_content = md(str(soup), heading_style="ATX", strip=['a'])
     markdown_content = re.sub(r'\n{3,}', '\n\n', markdown_content)
     markdown_content = markdown_content.strip()
-    
+
     return markdown_content
 
 
 async def main():
     ensure_dirs()
-    
+
     domain_filter = DomainFilter(
         allowed_domains=[TARGET_DOMAIN],
         blocked_domains=[]
     )
 
     content_type_filter = ContentTypeFilter(allowed_types=["text/html"])
-    
-    filter_chain = FilterChain([domain_filter, content_type_filter])
+
+    url_skip_filter = URLPatternFilter(
+        patterns=SKIP_URL_PATTERNS,
+        reverse=True
+    )
+
+    filter_chain = FilterChain([domain_filter, content_type_filter, url_skip_filter])
     
     deep_crawl_strategy = BFSDeepCrawlStrategy(
         max_depth=MAX_DEPTH,
@@ -132,7 +139,7 @@ async def main():
         max_pages=MAX_PAGES,
         filter_chain=filter_chain
     )
-    
+
     config = CrawlerRunConfig(
         deep_crawl_strategy=deep_crawl_strategy,
         scraping_strategy=LXMLWebScrapingStrategy(),
@@ -141,19 +148,18 @@ async def main():
         wait_for=WAIT_FOR,
         verbose=True
     )
-    
+
     print(f"Starting crawl of {START_URL}")
-    print(f"Max pages: {MAX_PAGES}, Max depth: {MAX_DEPTH}")
+    print(f"Max pages: {'Unlimited' if MAX_PAGES is None else MAX_PAGES}, Max depth: {MAX_DEPTH}")
     print(f"Domain: {TARGET_DOMAIN}")
-    print(f"Skip patterns: {len(SKIP_URL_PATTERNS)} patterns")
-    print("-" * 60)
-    
+    print(f"Skip patterns: {len(SKIP_URL_PATTERNS)} patterns (excluded at crawl-time)")
+
     async with AsyncWebCrawler() as crawler:
         results = await crawler.arun(url=START_URL, config=config)
-        
+
         print(f"\nCrawl complete! Fetched {len(results)} pages")
         print("Filtering and processing...")
-        
+
         output_data = {
             "crawl_info": {
                 "start_url": START_URL,
@@ -166,34 +172,34 @@ async def main():
             },
             "pages": []
         }
-        
+
         saved_count = 0
         skipped_count = 0
-        
+
         for i, result in enumerate(results):
             if should_skip_url(result.url):
                 skipped_count += 1
-                print(f"  ⊘ Skipped: {result.url}")
+                print(f"Skipped (post-filter): {result.url}")
                 continue
-            
+
             filename = sanitize_filename(result.url)
             base_name = filename[:-3]
             final_filename = filename
             file_path = os.path.join(MARKDOWN_DIR, final_filename)
-            
+
             counter = 1
             while os.path.exists(file_path):
                 final_filename = f"{base_name}_{counter}.md"
                 file_path = os.path.join(MARKDOWN_DIR, final_filename)
                 counter += 1
-            
+
             raw_html = getattr(result, 'html', '') or ''
             cleaned_markdown = clean_html_and_convert_to_markdown(
                 html=raw_html,
                 content_selector=CONTENT_SELECTOR,
                 remove_selectors=REMOVE_SELECTORS
             )
-            
+
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(f"---\n")
                 f.write(f"url: {result.url}\n")
@@ -202,7 +208,7 @@ async def main():
                 f.write(f"scraped_at: {datetime.now().isoformat()}\n")
                 f.write(f"---\n\n")
                 f.write(cleaned_markdown)
-            
+
             page_data = {
                 "url": result.url,
                 "depth": result.metadata.get('depth', 0),
@@ -214,17 +220,17 @@ async def main():
             }
             output_data["pages"].append(page_data)
             saved_count += 1
-            
+
             status = "✓" if page_data["has_content"] else "✗"
             print(f"  {status} Depth {page_data['depth']}: {result.url}")
             print(f"    → {final_filename} ({len(cleaned_markdown)} chars)")
-        
+
         output_data["crawl_info"]["total_pages_saved"] = saved_count
         output_data["crawl_info"]["total_pages_skipped"] = skipped_count
-        
+
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
-        
+
         print(f"\nJSON index: {OUTPUT_FILE}")
         print(f"Markdown files: {MARKDOWN_DIR}/")
         print("\n" + "=" * 60)

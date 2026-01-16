@@ -2,7 +2,7 @@
 url: https://ugurokullari.k12.tr/insan-kaynaklari
 title: 
 depth: 1
-scraped_at: 2026-01-15T16:52:02.202952
+scraped_at: 2026-01-16T16:36:29.617953
 ---
 
 # İnsan Kaynakları
