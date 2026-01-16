@@ -110,6 +110,12 @@ def clean_html_and_convert_to_markdown(html: str, content_selector: str = None, 
             return ""
     
     markdown_content = md(str(soup), heading_style="ATX", strip=['a'])
+
+    markdown_content = re.sub(r'!\[[^\]]*\]\([^)]+\)', '', markdown_content)
+
+    markdown_content = re.sub(r'PreviousNext', '', markdown_content)
+    markdown_content = re.sub(r'DAHA FAZLA BİLGİ AL', '', markdown_content)
+
     markdown_content = re.sub(r'\n{3,}', '\n\n', markdown_content)
     markdown_content = markdown_content.strip()
 
@@ -149,10 +155,8 @@ async def main():
         verbose=True
     )
 
-    print(f"Starting crawl of {START_URL}")
     print(f"Max pages: {'Unlimited' if MAX_PAGES is None else MAX_PAGES}, Max depth: {MAX_DEPTH}")
     print(f"Domain: {TARGET_DOMAIN}")
-    print(f"Skip patterns: {len(SKIP_URL_PATTERNS)} patterns (excluded at crawl-time)")
 
     async with AsyncWebCrawler() as crawler:
         results = await crawler.arun(url=START_URL, config=config)
