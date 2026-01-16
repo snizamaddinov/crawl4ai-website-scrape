@@ -4,7 +4,7 @@ import os
 import re
 import fnmatch
 from datetime import datetime
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
@@ -13,9 +13,10 @@ from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, ContentTyp
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
 
 TARGET_DOMAIN = "ugurokullari.k12.tr"
+BLOCKED_DOMAINS = ["https://ubsbilgi.ugurokullari.k12.tr"]
 START_URL = f"https://{TARGET_DOMAIN}"
 
-MAX_PAGES = None
+MAX_PAGES = 30
 MAX_DEPTH = 10
 
 PAGE_TIMEOUT = 60000
@@ -23,6 +24,13 @@ DELAY_BEFORE_SCRAPE = 3.0
 WAIT_FOR = "css:body"
 
 CONTENT_SELECTOR = "section"
+
+LINK_EXCLUDE_SELECTORS = [
+    ".box2",
+    ".box4",
+    ".box5",
+    "#homepage_news",
+]
 
 REMOVE_SELECTORS = [
     ".container-fluid",
@@ -55,8 +63,74 @@ SKIP_URL_PATTERNS = [
     "*.docx*",
     "*.pdf*",
     "*hakkimizda/yonetim*",
-    "*basin-odasi"
+    "*basin-odasi",
+    "*kategori/pdr*"
+    "*/blog",
+    "*haber-duyuru*",
+    "*haberler*"
 ]
+
+
+class FilteredBFSDeepCrawlStrategy(BFSDeepCrawlStrategy):
+    def __init__(self, link_exclude_selectors=None, **kwargs):
+        super().__init__(**kwargs)
+        self.link_exclude_selectors = link_exclude_selectors or []
+
+    def _get_allowed_links(self, html: str, base_url: str) -> set:
+        if not html:
+            return set()
+        
+        soup = BeautifulSoup(html, 'html.parser')
+        for selector in self.link_exclude_selectors:
+            for element in soup.select(selector):
+                element.decompose()
+        
+        allowed_links = set()
+        for a_tag in soup.find_all('a', href=True):
+            href = a_tag.get('href', '').strip()
+            if href and not href.startswith(('#', 'javascript:', 'mailto:', 'tel:')):
+                absolute_url = urljoin(base_url, href)
+                normalized = absolute_url.rstrip('/')
+                allowed_links.add(normalized)
+        
+        return allowed_links
+
+    async def link_discovery(
+        self,
+        result,
+        source_url: str,
+        current_depth: int,
+        visited,
+        next_level,
+        depths,
+    ) -> None:
+        if not self.link_exclude_selectors or not hasattr(result, 'html') or not result.html:
+            return await super().link_discovery(result, source_url, current_depth, visited, next_level, depths)
+        
+        allowed_links = self._get_allowed_links(result.html, source_url)
+        
+        original_links = result.links
+        
+        filtered_internal = []
+        for link in original_links.get("internal", []):
+            href = link.get("href", "").rstrip('/')
+            if href in allowed_links:
+                filtered_internal.append(link)
+        
+        filtered_external = []
+        for link in original_links.get("external", []):
+            href = link.get("href", "").rstrip('/')
+            if href in allowed_links:
+                filtered_external.append(link)
+        
+        result.links = {
+            "internal": filtered_internal,
+            "external": filtered_external
+        }
+        
+        await super().link_discovery(result, source_url, current_depth, visited, next_level, depths)
+        
+        result.links = original_links
 
 OUTPUT_DIR = "output"
 MARKDOWN_DIR = os.path.join(OUTPUT_DIR, "markdown")
@@ -138,7 +212,7 @@ async def main():
 
     domain_filter = DomainFilter(
         allowed_domains=[TARGET_DOMAIN],
-        blocked_domains=[]
+        blocked_domains=BLOCKED_DOMAINS
     )
 
     content_type_filter = ContentTypeFilter(allowed_types=["text/html"])
@@ -150,10 +224,11 @@ async def main():
 
     filter_chain = FilterChain([domain_filter, content_type_filter, url_skip_filter])
     
-    deep_crawl_strategy = BFSDeepCrawlStrategy(
+    deep_crawl_strategy = FilteredBFSDeepCrawlStrategy(
         max_depth=MAX_DEPTH,
         include_external=False,
-        filter_chain=filter_chain
+        filter_chain=filter_chain,
+        link_exclude_selectors=LINK_EXCLUDE_SELECTORS
     )
 
     config = CrawlerRunConfig(
