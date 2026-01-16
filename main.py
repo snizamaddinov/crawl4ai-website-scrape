@@ -2,13 +2,14 @@ import asyncio
 import json
 import os
 import re
+import fnmatch
 from datetime import datetime
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
 from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
-from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, URLPatternFilter
+from crawl4ai.deep_crawling.filters import FilterChain, DomainFilter, ContentTypeFilter
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
 
 TARGET_DOMAIN = "ugurokullari.k12.tr"
@@ -43,19 +44,16 @@ SKIP_URL_PATTERNS = [
     "*on-kayit*",
     "*iletisim*",
     "*kvkk*",
-    "*kvkk-basvuru-formu.docx*",
     "*login*",
     "*blog*",
     "*okul-kiyafetleri*",
     "*yonetim*",
     "*haber-ve-duyuru*",
-    "*ugurlu-olmak*"
+    "*ugurlu-olmak*",
     "*okullarimiz*",
-]
-
-SKIP_SAVE_PATTERNS = [
-    "/haber-duyuru/",
-    "/blog/",
+    "*.docx*",
+    "*.pdf*",
+    "*hakkimizda/yonetim*"
 ]
 
 OUTPUT_DIR = "output"
@@ -83,9 +81,9 @@ def ensure_dirs():
     os.makedirs(MARKDOWN_DIR, exist_ok=True)
 
 
-def should_skip_save(url: str) -> bool:
-    for pattern in SKIP_SAVE_PATTERNS:
-        if pattern in url:
+def should_skip_url(url: str) -> bool:
+    for pattern in SKIP_URL_PATTERNS:
+        if fnmatch.fnmatch(url, pattern):
             return True
     return False
 
@@ -123,12 +121,10 @@ async def main():
         allowed_domains=[TARGET_DOMAIN],
         blocked_domains=[]
     )
+
+    content_type_filter = ContentTypeFilter(allowed_types=["text/html"])
     
-    url_filter = URLPatternFilter(
-        patterns=SKIP_URL_PATTERNS
-    )
-    
-    filter_chain = FilterChain([domain_filter, url_filter])
+    filter_chain = FilterChain([domain_filter, content_type_filter])
     
     deep_crawl_strategy = BFSDeepCrawlStrategy(
         max_depth=MAX_DEPTH,
@@ -149,14 +145,14 @@ async def main():
     print(f"Starting crawl of {START_URL}")
     print(f"Max pages: {MAX_PAGES}, Max depth: {MAX_DEPTH}")
     print(f"Domain: {TARGET_DOMAIN}")
-    print(f"Skip URL patterns: {SKIP_URL_PATTERNS}")
-    print(f"Skip save patterns: {SKIP_SAVE_PATTERNS}")
+    print(f"Skip patterns: {len(SKIP_URL_PATTERNS)} patterns")
     print("-" * 60)
     
     async with AsyncWebCrawler() as crawler:
         results = await crawler.arun(url=START_URL, config=config)
         
-        print(f"\nCrawl complete! Scraped {len(results)} pages")
+        print(f"\nCrawl complete! Fetched {len(results)} pages")
+        print("Filtering and processing...")
         
         output_data = {
             "crawl_info": {
@@ -165,8 +161,7 @@ async def main():
                 "max_pages": MAX_PAGES,
                 "max_depth": MAX_DEPTH,
                 "skip_url_patterns": SKIP_URL_PATTERNS,
-                "skip_save_patterns": SKIP_SAVE_PATTERNS,
-                "total_pages_crawled": len(results),
+                "total_pages_fetched": len(results),
                 "crawl_timestamp": datetime.now().isoformat()
             },
             "pages": []
@@ -176,7 +171,7 @@ async def main():
         skipped_count = 0
         
         for i, result in enumerate(results):
-            if should_skip_save(result.url):
+            if should_skip_url(result.url):
                 skipped_count += 1
                 print(f"  ⊘ Skipped: {result.url}")
                 continue
@@ -224,6 +219,9 @@ async def main():
             print(f"  {status} Depth {page_data['depth']}: {result.url}")
             print(f"    → {final_filename} ({len(cleaned_markdown)} chars)")
         
+        output_data["crawl_info"]["total_pages_saved"] = saved_count
+        output_data["crawl_info"]["total_pages_skipped"] = skipped_count
+        
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
         
@@ -232,7 +230,7 @@ async def main():
         print("\n" + "=" * 60)
         print("SUMMARY")
         print("=" * 60)
-        print(f"Total crawled: {len(results)}")
+        print(f"Total fetched: {len(results)}")
         print(f"Saved: {saved_count}")
         print(f"Skipped: {skipped_count}")
 

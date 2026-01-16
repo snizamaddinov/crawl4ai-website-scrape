@@ -2,7 +2,7 @@
 url: https://ugurokullari.k12.tr/
 title: 
 depth: 0
-scraped_at: 2026-01-15T16:51:36.285326
+scraped_at: 2026-01-15T16:52:02.154176
 ---
 
 ## Eğitim-Öğretim
@@ -518,7 +518,6 @@ Başka bir dilde yetkin olmak için iki yöntem bulunur; yabancı dil öğrenme 
 Bütüncül ve yenilikçi bir dil edinimi süreci, öğrencilerin yaratıcı ve eleştirel düşünme becerilerini geliştirerek onların dış dünya ile anlamlı bir şekilde iletişime girmelerine olanak tanır. Uğur Okullarında ilkokul düzeyinde uygulanmakta olan yabancı dil edinimi programı, öğrencilerin kendilerini güvende hissedecekleri bir eğitim ortamı yaratarak iletişimsel yeterliliği ve temel dil becerilerini geliştirmeyi hedefler.
 
 Yabancı dil edinimi programında öncelik, öğrencilerin yaş düzeyleriyle paralel olarak dört temel dil becerisini geliştirmek, onları hedef dilde özgüvenli bir şekilde kendilerini ifade edebilen bireyler olarak yetiştirmektir.
-
 Program kapsamında öğrencilerin erken çocukluk döneminde hedef dilin düşünme sistemini de edinmeleri sağlanır. Proje bazlı çalışma yöntemleri sayesinde, dil edinimi süreçleri ev ortamında sürdürülebilir ve ilkokul kademesinde kritik rol oynayan veli-öğretmen-öğrenci bağı güçlendirilir.
 
 Uğur Okullarında uygulanan yabancı dil edinimi programının temelinde öğrencileri akademik yönden geliştirmenin yanı sıra 21. yüzyıl becerileri ile donatarak geleceğe hazırlamak vardır. Bu yaklaşımdan hareketle, okul öncesi yabancı dil edinimi programında dünyanın karşı karşıya olduğu küresel zorluklara (yoksulluk, eşitsizlik, iklim değişikliği, çevresel bozulma vb.) çözüm olmayı amaçlayan Birleşmiş Milletler Sürdürülebilir Kalkınma Hedefleri’nin tam entegrasyonu sağlanır. Nitelikli ve bütüncül bir eğitim felsefesi doğrultusunda uygulanan U Sustain programı kapsamında Uğurlu öğrenciler, kendilerini hedef dilde akıcı ve doğru bir şekilde ifade eder; içerisinde yer aldıkları projeler sayesinde ekip çalışması, problem çözme, etkili iletişim becerilerini geliştirir.
