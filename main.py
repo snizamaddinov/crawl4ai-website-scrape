@@ -16,8 +16,8 @@ TARGET_DOMAIN = "ugurokullari.k12.tr"
 BLOCKED_DOMAINS = ["https://ubsbilgi.ugurokullari.k12.tr"]
 START_URL = f"https://{TARGET_DOMAIN}"
 
-MAX_PAGES = 30
-MAX_DEPTH = 10
+MAX_PAGES = None
+MAX_DEPTH = 100
 
 PAGE_TIMEOUT = 60000
 DELAY_BEFORE_SCRAPE = 3.0
@@ -47,6 +47,15 @@ REMOVE_SELECTORS = [
     "script",
     "style",
     "noscript",
+    "#kvkkModal",
+    ".sidebar",
+    ".left-fixed",
+    "#panel",
+    ".call",
+    ".bottom-list",
+    ".xs-modifier",
+    "#contactForm",
+    "#navbar"
 ]
 
 SKIP_URL_PATTERNS = [
@@ -172,6 +181,10 @@ def should_skip_url(url: str) -> bool:
     for pattern in SKIP_URL_PATTERNS:
         if fnmatch.fnmatch(url, pattern):
             return True
+
+    if url == START_URL:
+        return True
+
     return False
 
 
@@ -247,7 +260,7 @@ async def main():
         results = await crawler.arun(url=START_URL, config=config)
 
         print(f"\nCrawl complete! Fetched {len(results)} pages")
-        print("Filtering and processing...")
+        print("Filtering and processing")
 
         output_data = {
             "crawl_info": {
