@@ -1,9 +1,9 @@
 {
   "crawl_info": {
-    "start_url": "https://ugurokullari.k12.tr/",
+    "start_url": "https://ugurokullari.k12.tr",
     "target_domain": "ugurokullari.k12.tr",
     "max_pages": null,
-    "max_depth": 10,
+    "max_depth": 100,
     "skip_url_patterns": [
       "*on-kayit*",
       "*iletisim*",
@@ -18,67 +18,1086 @@
       "*.docx*",
       "*.pdf*",
       "*hakkimizda/yonetim*",
-      "*basin-odasi"
+      "*basin-odasi",
+      "*kategori/pdr**/blog",
+      "*haber-duyuru*",
+      "*haberler*"
     ],
-    "total_pages_fetched": 7,
-    "crawl_timestamp": "2026-01-16T17:00:17.690990",
-    "total_pages_saved": 6,
-    "total_pages_skipped": 1
+    "total_pages_fetched": 114,
+    "crawl_timestamp": "2026-01-18T14:25:49.387225",
+    "total_pages_saved": 107,
+    "total_pages_skipped": 7
   },
   "pages": [
     {
-      "url": "https://ugurokullari.k12.tr/",
-      "depth": 0,
-      "title": "",
-      "markdown_file": "output/markdown/index.md",
-      "markdown_file_relative": "markdown/index.md",
-      "content_length": 176785,
-      "has_content": true
-    },
-    {
-      "url": "https://ugurokullari.k12.tr/cocuklar-ve-fobi",
+      "url": "https://ugurokullari.k12.tr/metodbox",
       "depth": 1,
       "title": "",
-      "markdown_file": "output/markdown/cocuklar-ve-fobi.md",
-      "markdown_file_relative": "markdown/cocuklar-ve-fobi.md",
-      "content_length": 15182,
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/metodbox.md",
+      "markdown_file_relative": "markdown/metodbox.md",
+      "content_length": 3730,
       "has_content": true
     },
     {
-      "url": "https://ugurokullari.k12.tr/dijital-cagda-anne-baba-olmak",
+      "url": "https://ugurokullari.k12.tr/akademik-birim/ortaokul",
       "depth": 1,
       "title": "",
-      "markdown_file": "output/markdown/dijital-cagda-anne-baba-olmak.md",
-      "markdown_file_relative": "markdown/dijital-cagda-anne-baba-olmak.md",
-      "content_length": 16081,
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/akademik-birim_ortaokul.md",
+      "markdown_file_relative": "markdown/akademik-birim_ortaokul.md",
+      "content_length": 751,
       "has_content": true
     },
     {
-      "url": "https://ugurokullari.k12.tr/egitimde-disiplinin-onemi-ve-etkileri",
+      "url": "https://ugurokullari.k12.tr/insan-kaynaklari",
       "depth": 1,
       "title": "",
-      "markdown_file": "output/markdown/egitimde-disiplinin-onemi-ve-etkileri.md",
-      "markdown_file_relative": "markdown/egitimde-disiplinin-onemi-ve-etkileri.md",
-      "content_length": 18302,
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/insan-kaynaklari.md",
+      "markdown_file_relative": "markdown/insan-kaynaklari.md",
+      "content_length": 3600,
       "has_content": true
     },
     {
-      "url": "https://ugurokullari.k12.tr/dijital-dunyada-gelisimsel-uyum",
+      "url": "https://ugurokullari.k12.tr/akademik-birim/lise",
       "depth": 1,
       "title": "",
-      "markdown_file": "output/markdown/dijital-dunyada-gelisimsel-uyum.md",
-      "markdown_file_relative": "markdown/dijital-dunyada-gelisimsel-uyum.md",
-      "content_length": 15098,
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/akademik-birim_lise.md",
+      "markdown_file_relative": "markdown/akademik-birim_lise.md",
+      "content_length": 2411,
       "has_content": true
     },
     {
-      "url": "https://ugurokullari.k12.tr/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler",
+      "url": "https://ugurokullari.k12.tr/akademik-birim/ilkokul",
+      "depth": 1,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/akademik-birim_ilkokul.md",
+      "markdown_file_relative": "markdown/akademik-birim_ilkokul.md",
+      "content_length": 975,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/akademik-birim/okul-oncesi-ve-bagimsiz-anaokulu",
+      "depth": 1,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/akademik-birim_okul-oncesi-ve-bagimsiz-anaokulu.md",
+      "markdown_file_relative": "markdown/akademik-birim_okul-oncesi-ve-bagimsiz-anaokulu.md",
+      "content_length": 2141,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/sorularla-ugur-okullari",
+      "depth": 1,
+      "title": "",
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/sorularla-ugur-okullari.md",
+      "markdown_file_relative": "markdown/sorularla-ugur-okullari.md",
+      "content_length": 6890,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/egitime-teknolojik-destek",
+      "depth": 1,
+      "title": "",
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/egitime-teknolojik-destek.md",
+      "content_length": 3560,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/egitim-felsefesi",
+      "depth": 1,
+      "title": "",
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/egitim-felsefesi.md",
+      "markdown_file_relative": "markdown/egitim-felsefesi.md",
+      "content_length": 3160,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/hakkimizda/bir-bakista-biz",
+      "depth": 1,
+      "title": "",
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/hakkimizda_bir-bakista-biz.md",
+      "markdown_file_relative": "markdown/hakkimizda_bir-bakista-biz.md",
+      "content_length": 1401,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ugur-international",
+      "depth": 1,
+      "title": "",
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/ugur-international.md",
+      "markdown_file_relative": "markdown/ugur-international.md",
+      "content_length": 2961,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/hakkimizda",
       "depth": 2,
       "title": "",
-      "markdown_file": "output/markdown/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler.md",
-      "markdown_file_relative": "markdown/cocugunuzun-gunluk-duzenini-desteklemek-icin-pratik-yontemler.md",
-      "content_length": 0,
-      "has_content": false
+      "academic_level": "GENEL",
+      "markdown_file": "output/markdown/hakkimizda.md",
+      "markdown_file_relative": "markdown/hakkimizda.md",
+      "content_length": 12,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/akademik-birim-detay/ortaokul",
+      "depth": 2,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/akademik-birim-detay_ortaokul.md",
+      "markdown_file_relative": "markdown/akademik-birim-detay_ortaokul.md",
+      "content_length": 2925,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/akademik-kur-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_akademik-kur-sistemi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_akademik-kur-sistemi.md",
+      "content_length": 2072,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-aktif-yasam.md",
+      "content_length": 710,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/anaokulunda-egitim-programi-degerlendirmesi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_anaokulunda-egitim-programi-degerlendirmesi.md",
+      "markdown_file_relative": "markdown/anaokulu_anaokulunda-egitim-programi-degerlendirmesi.md",
+      "content_length": 2505,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/yayinlar-ile-her-yerde-bilgiye-erisim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "content_length": 693,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/universite-sinavina-hazirlik-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_universite-sinavina-hazirlik-programi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_universite-sinavina-hazirlik-programi.md",
+      "content_length": 1458,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugur-cift-diploma-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugur-cift-diploma-programi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugur-cift-diploma-programi.md",
+      "content_length": 1178,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/anaokulunda-alternatif-egitim-yaklasimi-nedir",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_anaokulunda-alternatif-egitim-yaklasimi-nedir.md",
+      "markdown_file_relative": "markdown/anaokulu_anaokulunda-alternatif-egitim-yaklasimi-nedir.md",
+      "content_length": 794,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-sanat-var.md",
+      "content_length": 1068,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugur-sinava-hazirlik-merkezi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugur-sinava-hazirlik-merkezi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugur-sinava-hazirlik-merkezi.md",
+      "content_length": 1514,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_asdf.md",
+      "markdown_file_relative": "markdown/anaokulu_asdf.md",
+      "content_length": 1514,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugur-international.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugur-international.md",
+      "content_length": 3319,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-ingilizce",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-ingilizce.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-ingilizce.md",
+      "content_length": 4031,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/sinav-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_sinav-sistemi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_sinav-sistemi.md",
+      "content_length": 1168,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 8581,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-stem-egitimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-stem-egitimi.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-stem-egitimi.md",
+      "content_length": 1950,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_egitime-teknolojik-destek.md",
+      "content_length": 2237,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_asdf.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_asdf.md",
+      "content_length": 1744,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-egitim-ve-ogretim.md",
+      "content_length": 6512,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/anaokulu-egitimde-erkenstem-yaklasimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_anaokulu-egitimde-erkenstem-yaklasimi.md",
+      "markdown_file_relative": "markdown/anaokulu_anaokulu-egitimde-erkenstem-yaklasimi.md",
+      "content_length": 2032,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anadolu-lisesi/ugurda-almanca",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/anadolu-lisesi_ugurda-almanca.md",
+      "markdown_file_relative": "markdown/anadolu-lisesi_ugurda-almanca.md",
+      "content_length": 1351,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/cocuklukta-felsefe-p4u",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_cocuklukta-felsefe-p4u.md",
+      "markdown_file_relative": "markdown/anaokulu_cocuklukta-felsefe-p4u.md",
+      "content_length": 495,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/anaokulu_egitime-teknolojik-destek.md",
+      "content_length": 3449,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ikinci-dil-edinimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ikinci-dil-edinimi.md",
+      "markdown_file_relative": "markdown/anaokulu_ikinci-dil-edinimi.md",
+      "content_length": 3004,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/anaokulu_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 5613,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ugur-international.md",
+      "markdown_file_relative": "markdown/anaokulu_ugur-international.md",
+      "content_length": 1189,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/u-ready-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_u-ready-programi.md",
+      "markdown_file_relative": "markdown/anaokulu_u-ready-programi.md",
+      "content_length": 1161,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/anaokulu_ugurda-egitim-ve-ogretim.md",
+      "content_length": 5407,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/anaokulu_ugurda-sanat-var.md",
+      "content_length": 3486,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/anaokulu_ugurda-aktif-yasam.md",
+      "content_length": 1978,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/ugur-okullarinda-ogrenme-ortami",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_ugur-okullarinda-ogrenme-ortami.md",
+      "markdown_file_relative": "markdown/anaokulu_ugur-okullarinda-ogrenme-ortami.md",
+      "content_length": 1366,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/anaokulu/yasamin-sihirli-yillari-anaokulu-donemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ANAOKULU",
+      "markdown_file": "output/markdown/anaokulu_yasamin-sihirli-yillari-anaokulu-donemi.md",
+      "markdown_file_relative": "markdown/anaokulu_yasamin-sihirli-yillari-anaokulu-donemi.md",
+      "content_length": 1772,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/akademik-kur-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_akademik-kur-sistemi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_akademik-kur-sistemi.md",
+      "content_length": 1837,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/fen-lisesi_egitime-teknolojik-destek.md",
+      "content_length": 1880,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 8577,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_asdf.md",
+      "markdown_file_relative": "markdown/fen-lisesi_asdf.md",
+      "content_length": 1279,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugur-cift-diploma-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugur-cift-diploma-programi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugur-cift-diploma-programi.md",
+      "content_length": 1174,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/sinav-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_sinav-sistemi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_sinav-sistemi.md",
+      "content_length": 627,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugur-sinava-hazirlik-merkezi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugur-sinava-hazirlik-merkezi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugur-sinava-hazirlik-merkezi.md",
+      "content_length": 1510,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugur-international.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugur-international.md",
+      "content_length": 3315,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-egitim-ve-ogretim.md",
+      "content_length": 5406,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-almanca",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-almanca.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-almanca.md",
+      "content_length": 1347,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-aktif-yasam.md",
+      "content_length": 706,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-sanat-var.md",
+      "content_length": 1064,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-ingilizce",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-ingilizce.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-ingilizce.md",
+      "content_length": 4027,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/ugurda-stem-egitimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_ugurda-stem-egitimi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_ugurda-stem-egitimi.md",
+      "content_length": 1946,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/universite-sinavina-hazirlik-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_universite-sinavina-hazirlik-programi.md",
+      "markdown_file_relative": "markdown/fen-lisesi_universite-sinavina-hazirlik-programi.md",
+      "content_length": 1454,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/fen-lisesi/yayinlar-ile-her-yerde-bilgiye-erisim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "LISE",
+      "markdown_file": "output/markdown/fen-lisesi_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "markdown_file_relative": "markdown/fen-lisesi_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "content_length": 690,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/akademik-gelisim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_akademik-gelisim.md",
+      "markdown_file_relative": "markdown/ilkokul_akademik-gelisim.md",
+      "content_length": 1788,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_asdf.md",
+      "markdown_file_relative": "markdown/ilkokul_asdf.md",
+      "content_length": 1266,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/cocuk-dostu-ogrenme-ortamlari",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_cocuk-dostu-ogrenme-ortamlari.md",
+      "markdown_file_relative": "markdown/ilkokul_cocuk-dostu-ogrenme-ortamlari.md",
+      "content_length": 928,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/erkenstem-yaklasimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_erkenstem-yaklasimi.md",
+      "markdown_file_relative": "markdown/ilkokul_erkenstem-yaklasimi.md",
+      "content_length": 1809,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/ilkokul_egitime-teknolojik-destek.md",
+      "content_length": 4215,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/ilkokul_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 5757,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ikinci-dil-edinimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ikinci-dil-edinimi.md",
+      "markdown_file_relative": "markdown/ilkokul_ikinci-dil-edinimi.md",
+      "content_length": 1988,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/u-ready-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_u-ready-programi.md",
+      "markdown_file_relative": "markdown/ilkokul_u-ready-programi.md",
+      "content_length": 929,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugur-international.md",
+      "markdown_file_relative": "markdown/ilkokul_ugur-international.md",
+      "content_length": 1188,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugur-okullarinda-ilkokul-egitimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugur-okullarinda-ilkokul-egitimi.md",
+      "markdown_file_relative": "markdown/ilkokul_ugur-okullarinda-ilkokul-egitimi.md",
+      "content_length": 347,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/ilkokul_ugurda-egitim-ve-ogretim.md",
+      "content_length": 5407,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugurda-almanca",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugurda-almanca.md",
+      "markdown_file_relative": "markdown/ilkokul_ugurda-almanca.md",
+      "content_length": 1112,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/ilkokul_ugurda-aktif-yasam.md",
+      "content_length": 1454,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/ilkokul_ugurda-sanat-var.md",
+      "content_length": 4083,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_asdf.md",
+      "markdown_file_relative": "markdown/okul-oncesi_asdf.md",
+      "content_length": 2267,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ilkokul/ugurda-fark-yaratan-uygulamalar",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ILKOKUL",
+      "markdown_file": "output/markdown/ilkokul_ugurda-fark-yaratan-uygulamalar.md",
+      "markdown_file_relative": "markdown/ilkokul_ugurda-fark-yaratan-uygulamalar.md",
+      "content_length": 2175,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/alternatif-egitim-yaklasimi-nedir",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_alternatif-egitim-yaklasimi-nedir.md",
+      "markdown_file_relative": "markdown/okul-oncesi_alternatif-egitim-yaklasimi-nedir.md",
+      "content_length": 1374,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/cocuklukta-felsefe-p4u",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_cocuklukta-felsefe-p4u.md",
+      "markdown_file_relative": "markdown/okul-oncesi_cocuklukta-felsefe-p4u.md",
+      "content_length": 670,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ikinci-dil-edinimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ikinci-dil-edinimi.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ikinci-dil-edinimi.md",
+      "content_length": 3020,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/okul-oncesi_egitime-teknolojik-destek.md",
+      "content_length": 4634,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/okul-oncesi-egitimde-erkenstem-yaklasimi-1",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_okul-oncesi-egitimde-erkenstem-yaklasimi-1.md",
+      "markdown_file_relative": "markdown/okul-oncesi_okul-oncesi-egitimde-erkenstem-yaklasimi-1.md",
+      "content_length": 2044,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/okul-oncesi_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 5619,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/okul-oncesi-egitim-programi-degerlendirmesi-1",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_okul-oncesi-egitim-programi-degerlendirmesi-1.md",
+      "markdown_file_relative": "markdown/okul-oncesi_okul-oncesi-egitim-programi-degerlendirmesi-1.md",
+      "content_length": 2817,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ugurda-sanat-var.md",
+      "content_length": 3505,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ugur-international.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ugur-international.md",
+      "content_length": 1192,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ugurda-aktif-yasam.md",
+      "content_length": 1984,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ugurda-egitim-ve-ogretim.md",
+      "content_length": 5407,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/u-ready-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_u-ready-programi.md",
+      "markdown_file_relative": "markdown/okul-oncesi_u-ready-programi.md",
+      "content_length": 1577,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/ugur-okullarinda-ogrenme-ortami",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_ugur-okullarinda-ogrenme-ortami.md",
+      "markdown_file_relative": "markdown/okul-oncesi_ugur-okullarinda-ogrenme-ortami.md",
+      "content_length": 1369,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/okul-oncesi/yasamin-sihirli-yillari-okul-oncesi-donem-1",
+      "depth": 3,
+      "title": "",
+      "academic_level": "OKUL_ONCESI",
+      "markdown_file": "output/markdown/okul-oncesi_yasamin-sihirli-yillari-okul-oncesi-donem-1.md",
+      "markdown_file_relative": "markdown/okul-oncesi_yasamin-sihirli-yillari-okul-oncesi-donem-1.md",
+      "content_length": 1786,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/lise-sinavina-hazirlik-programi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_lise-sinavina-hazirlik-programi.md",
+      "markdown_file_relative": "markdown/ortaokul_lise-sinavina-hazirlik-programi.md",
+      "content_length": 744,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/akademik-kur-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_akademik-kur-sistemi.md",
+      "markdown_file_relative": "markdown/ortaokul_akademik-kur-sistemi.md",
+      "content_length": 1688,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/kisiye-ozgu-ogretim-modeli",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_kisiye-ozgu-ogretim-modeli.md",
+      "markdown_file_relative": "markdown/ortaokul_kisiye-ozgu-ogretim-modeli.md",
+      "content_length": 1149,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugur-international",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugur-international.md",
+      "markdown_file_relative": "markdown/ortaokul_ugur-international.md",
+      "content_length": 1369,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/cocuklukta-felsefe-p4u-2",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_cocuklukta-felsefe-p4u-2.md",
+      "markdown_file_relative": "markdown/ortaokul_cocuklukta-felsefe-p4u-2.md",
+      "content_length": 499,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/psikolojik-danisma-ve-rehberlik-birimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "markdown_file_relative": "markdown/ortaokul_psikolojik-danisma-ve-rehberlik-birimi.md",
+      "content_length": 7229,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/egitime-teknolojik-destek",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_egitime-teknolojik-destek.md",
+      "markdown_file_relative": "markdown/ortaokul_egitime-teknolojik-destek.md",
+      "content_length": 3337,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/asdf",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_asdf.md",
+      "markdown_file_relative": "markdown/ortaokul_asdf.md",
+      "content_length": 1276,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugur-okullarinda-sinav-sistemi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugur-okullarinda-sinav-sistemi.md",
+      "markdown_file_relative": "markdown/ortaokul_ugur-okullarinda-sinav-sistemi.md",
+      "content_length": 623,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugur-sinava-hazirlik-merkezi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugur-sinava-hazirlik-merkezi.md",
+      "markdown_file_relative": "markdown/ortaokul_ugur-sinava-hazirlik-merkezi.md",
+      "content_length": 1513,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-aktif-yasam",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-aktif-yasam.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-aktif-yasam.md",
+      "content_length": 1013,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-almanca-u-deutsch",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-almanca-u-deutsch.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-almanca-u-deutsch.md",
+      "content_length": 1343,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-egitim-ve-ogretim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-egitim-ve-ogretim.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-egitim-ve-ogretim.md",
+      "content_length": 5408,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-stem-egitimi",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-stem-egitimi.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-stem-egitimi.md",
+      "content_length": 2077,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/yayinlar-ile-her-yerde-bilgiye-erisim",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "markdown_file_relative": "markdown/ortaokul_yayinlar-ile-her-yerde-bilgiye-erisim.md",
+      "content_length": 749,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-sanat-var",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-sanat-var.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-sanat-var.md",
+      "content_length": 2348,
+      "has_content": true
+    },
+    {
+      "url": "https://ugurokullari.k12.tr/ortaokul/ugurda-ingilizce",
+      "depth": 3,
+      "title": "",
+      "academic_level": "ORTAOKUL",
+      "markdown_file": "output/markdown/ortaokul_ugurda-ingilizce.md",
+      "markdown_file_relative": "markdown/ortaokul_ugurda-ingilizce.md",
+      "content_length": 4034,
+      "has_content": true
     }
   ]
 }

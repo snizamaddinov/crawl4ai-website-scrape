@@ -79,6 +79,15 @@ SKIP_URL_PATTERNS = [
     "*haberler*"
 ]
 
+SKIP_URL_PATHS = [
+    "/akademik-birim-detay/anadolu-lisesi",
+    "/akademik-birim-detay/anaokulu",
+    "/akademik-birim-detay/fen-lisesi",
+    "/akademik-birim-detay/ilkokul",
+    "/akademik-birim-detay/okul-oncesi",
+    "/akademik-birim-detay/ortaokul"
+]
+
 
 class FilteredBFSDeepCrawlStrategy(BFSDeepCrawlStrategy):
     def __init__(self, link_exclude_selectors=None, **kwargs):
@@ -182,10 +191,46 @@ def should_skip_url(url: str) -> bool:
         if fnmatch.fnmatch(url, pattern):
             return True
 
+    path = urlparse(url).path.lower()
+    for skip_path in SKIP_URL_PATHS:
+        if path == skip_path:
+            return True
+
     if url == START_URL:
         return True
 
     return False
+
+
+def extract_academic_level(url: str) -> str:
+    path = urlparse(url).path.lower()
+
+    if "/anaokulu/" in path or path.endswith("/anaokulu"):
+        return "ANAOKULU"
+    if "/okul-oncesi/" in path or path.endswith("/okul-oncesi"):
+        return "OKUL_ONCESI"
+    if "okul-oncesi-ve-bagimsiz-anaokulu" in path:
+        return "OKUL_ONCESI"
+    if "akademik-birim-detay_anaokulu" in path or "akademik-birim-detay_okul-oncesi" in path:
+        return "OKUL_ONCESI"
+    if "/ilkokul/" in path or path.endswith("/ilkokul"):
+        return "ILKOKUL"
+    if "akademik-birim-detay_ilkokul" in path or "akademik-birim_ilkokul" in path:
+        return "ILKOKUL"
+    if "/ortaokul/" in path or path.endswith("/ortaokul"):
+        return "ORTAOKUL"
+    if "akademik-birim-detay_ortaokul" in path or "akademik-birim_ortaokul" in path:
+        return "ORTAOKUL"
+    if "/anadolu-lisesi/" in path or path.endswith("/anadolu-lisesi"):
+        return "LISE"
+    if "/fen-lisesi/" in path or path.endswith("/fen-lisesi"):
+        return "LISE"
+    if "akademik-birim-detay_anadolu-lisesi" in path or "akademik-birim-detay_fen-lisesi" in path:
+        return "LISE"
+    if "akademik-birim_lise" in path or "/lise" in path:
+        return "LISE"
+
+    return "GENEL"
 
 
 def clean_html_and_convert_to_markdown(html: str, content_selector: str = None, remove_selectors: list = None) -> str:
@@ -311,11 +356,14 @@ async def main():
                 remove_selectors=REMOVE_SELECTORS
             )
 
+            academic_level = extract_academic_level(result.url)
+
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(f"---\n")
                 f.write(f"url: {result.url}\n")
                 f.write(f"title: {getattr(result, 'title', '')}\n")
                 f.write(f"depth: {result.metadata.get('depth', 0)}\n")
+                f.write(f"academic_level: {academic_level}\n")
                 f.write(f"scraped_at: {datetime.now().isoformat()}\n")
                 f.write(f"---\n\n")
                 f.write(cleaned_markdown)
@@ -324,6 +372,7 @@ async def main():
                 "url": result.url,
                 "depth": result.metadata.get('depth', 0),
                 "title": getattr(result, 'title', ''),
+                "academic_level": academic_level,
                 "markdown_file": file_path,
                 "markdown_file_relative": os.path.join("markdown", final_filename),
                 "content_length": len(cleaned_markdown),
